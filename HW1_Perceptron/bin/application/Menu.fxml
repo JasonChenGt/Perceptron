@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox id="boxTest" alignment="CENTER" layoutX="470.0" layoutY="30.0" prefHeight="450.0" prefWidth="450.0" />
+      <VBox id="boxTrain" alignment="CENTER" layoutY="30.0" prefHeight="450.0" prefWidth="450.0" />
+      <VBox layoutX="940.0" prefHeight="480.0" prefWidth="240.0">
+         <children>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="學習率：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField id="learningRate" prefWidth="120.0" promptText="預設為0.1" />
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="最大收斂次數：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField id="maxTimes" prefWidth="120.0" promptText="預設為1000次" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="最小辨識率：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField id="minRecRate" prefWidth="120.0" promptText="預設為100%" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="訓練次數：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text id="trainingTimes" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="120.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="最終閥值：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text id="threshold" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="120.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="最終鍵結值：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text id="weights" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="120.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="訓練辨識率：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text id="trainingRecRate" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="120.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="測試辨識率：" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text id="testingRecRate" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="120.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Button id="loadFile" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Load File">
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="60.0" prefWidth="240.0">
+               <children>
+                  <Text id="path" layoutX="20.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Pane>
+            <Button id="newTraining" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="New Training">
+               <VBox.margin>
+                  <Insets left="20.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Text layoutX="470.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="測試資料結果圖示" textAlignment="CENTER" wrappingWidth="450.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="訓練資料結果圖示" textAlignment="CENTER" wrappingWidth="450.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
